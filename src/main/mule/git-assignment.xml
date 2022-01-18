@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8815dd0b-22db-4a34-b6ac-3e814a87b58b" >
+		<http:listener-connection host="0.0.0.0" port="8085" />
+	</http:listener-config>
+	<flow name="git-assignmentFlow" doc:id="83f84ac7-c07a-4a0d-a576-fc1f54e7e2bc" >
+		<http:listener doc:name="Listener" doc:id="af03ba9e-e9ee-4cea-8c31-e030f30b886a" config-ref="HTTP_Listener_config" path="/git"/>
+		<set-payload value='#["successful message"]' doc:name="Set Payload" doc:id="97892209-e6f9-4235-9d7a-c958184bdb72" />
+		<ee:transform doc:name="Transform Message" doc:id="9ece2ce5-b109-44fc-a0e8-2137def09393" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
