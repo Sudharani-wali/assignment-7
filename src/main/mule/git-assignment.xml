@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8815dd0b-22db-4a34-b6ac-3e814a87b58b" >
-		<http:listener-connection host="0.0.0.0" port="8085" />
+		<http:listener-connection host="0.0.0.0" port="8082" />
 	</http:listener-config>
 	<flow name="git-assignmentFlow" doc:id="83f84ac7-c07a-4a0d-a576-fc1f54e7e2bc" >
 		<http:listener doc:name="Listener" doc:id="af03ba9e-e9ee-4cea-8c31-e030f30b886a" config-ref="HTTP_Listener_config" path="/git"/>
