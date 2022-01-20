@@ -39,10 +39,10 @@
 				<environment>Sandbox</environment>
 				<workers>1</workers>
 				<workerType>Micro</workerType>
-				<applicationName>git-assignment-service</applicationName>
-				<muleVersion>4.4.0</muleVersion>
+				<applicationName>assignment-7</applicationName>
 				<password>Sudhawali@123</password>
-			    </cloudHubDeployment>
+				<muleVersion>4.3.0</muleVersion>
+				</cloudHubDeployment>
 				</configuration>
 				
 				
