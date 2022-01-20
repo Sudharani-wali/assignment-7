@@ -16,6 +16,9 @@
 		<app.runtime>4.3.0-20210622</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
 	</properties>
+	
+	
+	
 
 	<build>
 		<plugins>
@@ -29,6 +32,20 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				
+				<configuration>
+				<cloudHubDeployment>
+				<username>wali_sudha</username>
+				<environment>Sandbox</environment>
+				<workers>1</workers>
+				<workerType>Micro</workerType>
+				<applicationName>git-assignment-service</applicationName>
+				<muleVersion>4.4.0</muleVersion>
+				<password>Sudhawali@123</password>
+			    </cloudHubDeployment>
+				</configuration>
+				
+				
 			</plugin>
 		</plugins>
 	</build>
@@ -48,6 +65,9 @@
 		</dependency>
 	</dependencies>
 
+	
+	
+	
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v2</id>
